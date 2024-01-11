@@ -41,12 +41,16 @@ const isValid = isSum50 && isTwoOdd && isNotOver25 && isUnique;
 // Finally, log the results.
 console.log(isValid);
 
+// Checks if each number is divisible by 5 and sore the result in variable
+// prints variable to see result
 let isDivisibleByFive = n1 % 5 === 0 && n2 % 5 === 0 && n3 % 5 === 0 && n4 % 5 === 0;
 console.log(isDivisibleByFive);
 
+// checks if first number is larger than fourth number and prints result
 let firstLargerThanLast = n1 > n4;
 console.log(firstLargerThanLast);
 
+// here is a math chain and prints the remainder with the modulus operator
 mathChain = ((n2 - n1) * n3) % n4;
 console.log(mathChain);
 
@@ -58,3 +62,39 @@ const dontDoThis = ((n1 + n2 + n3 + n4) == 50) &&
     ((n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2) &&
     !(n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25) &&
     (n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4);
+
+/*
+
+Part One
+ 
+ */
+let slowSpeed = 55;
+let slowspeedMilesPerGallon = 30;
+
+let mediumSpeed = 60;
+let mediumSpeedMilesPerGallon = 28;
+
+let fastSpeed = 75;
+let fastSpeedMilesPerGallon = 23;
+
+let budget = 175;
+let averageGallonCost = 3;
+
+
+
+let slowGallonsNeeded = 1500 / slowspeedMilesPerGallon;
+let mediumGallonsNeeded = 1500 / mediumSpeedMilesPerGallon
+let fastGallonsNeeded = 1500 / fastSpeedMilesPerGallon;
+
+let isBudgetEnoughSlow = budget >= averageGallonCost * slowGallonsNeeded;
+let isBudgetEnoughMedium = budget >= averageGallonCost * mediumGallonsNeeded;
+let isBudgetEnoughFast = budget >= averageGallonCost * fastGallonsNeeded;
+
+let timeForTripSlow = 1500 / slowSpeed;
+let timeForTripMedium = 1500 / mediumSpeed;
+let timeForTripFast = 1500 / fastSpeed;
+console.log(`How many gallons of fuel will you need for the entire trip?:\nfor the slow speed you need ${slowGallonsNeeded} gallons\nFor medium speed you need ${mediumGallonsNeeded} gallons\nFor fast speed you need ${fastGallonsNeeded} gallons`);
+console.log(`Will your budget be enough to covor your fuel expense?\nIf going at the slowest speed, and assuming 3 dollars a gallon being able to cover fuel expense is: ${isBudgetEnoughSlow}\nIf you are going at medium speed being able to cover fuel expense is: ${isBudgetEnoughMedium}\nIf you are going at fast speed being able to cover fuel expense is: ${isBudgetEnoughFast}`)
+console.log(`How long will the trip take in hours?\nGoing at the slowest speed it will take ${timeForTripSlow} hours\nGoing at the medium speed it will take ${timeForTripMedium} hours\nGoing at the fastest speed it will take ${timeForTripFast} hours`);
+console.log("If you want to save the most time while being within budget trying to stay at 60mph for most of trip will get you there the quickest while staying within budget.")
+
