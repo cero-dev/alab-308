@@ -65,34 +65,45 @@ const dontDoThis = ((n1 + n2 + n3 + n4) == 50) &&
 
 /*
 
-Part One
+Part Two
  
  */
+
+// here is the slow speed miles per hour and miles per gallon values
 let slowSpeed = 55;
 let slowspeedMilesPerGallon = 30;
 
+// here is the medium speed miles per hour and miles per gallon values
 let mediumSpeed = 60;
 let mediumSpeedMilesPerGallon = 28;
 
+// here is the fast speed miles per hour and miles per gallon values
 let fastSpeed = 75;
 let fastSpeedMilesPerGallon = 23;
 
+// here is the total budget and average gallon price value
 let budget = 175;
 let averageGallonCost = 3;
 
 
-
+// here we determine how many gallons we need for the trip based on a 1500 mile range and based on the speed
+// you are going
 let slowGallonsNeeded = 1500 / slowspeedMilesPerGallon;
 let mediumGallonsNeeded = 1500 / mediumSpeedMilesPerGallon
 let fastGallonsNeeded = 1500 / fastSpeedMilesPerGallon;
 
+// here we determine that if you go at a constant speed, we multiply the price per gallon on the gallons total for that speed and distance
+// and we see if it's within our budget or not. It stores a true or false value in the "isBudgetEnough" variable
 let isBudgetEnoughSlow = budget >= averageGallonCost * slowGallonsNeeded;
 let isBudgetEnoughMedium = budget >= averageGallonCost * mediumGallonsNeeded;
 let isBudgetEnoughFast = budget >= averageGallonCost * fastGallonsNeeded;
 
+// here we determine how many hours the trip is going to take based on the speed we are going
 let timeForTripSlow = 1500 / slowSpeed;
 let timeForTripMedium = 1500 / mediumSpeed;
 let timeForTripFast = 1500 / fastSpeed;
+
+//here I am sending all of the data findings to the log formatted
 console.log(`How many gallons of fuel will you need for the entire trip?:\nfor the slow speed you need ${slowGallonsNeeded} gallons\nFor medium speed you need ${mediumGallonsNeeded} gallons\nFor fast speed you need ${fastGallonsNeeded} gallons`);
 console.log(`Will your budget be enough to covor your fuel expense?\nIf going at the slowest speed, and assuming 3 dollars a gallon being able to cover fuel expense is: ${isBudgetEnoughSlow}\nIf you are going at medium speed being able to cover fuel expense is: ${isBudgetEnoughMedium}\nIf you are going at fast speed being able to cover fuel expense is: ${isBudgetEnoughFast}`)
 console.log(`How long will the trip take in hours?\nGoing at the slowest speed it will take ${timeForTripSlow} hours\nGoing at the medium speed it will take ${timeForTripMedium} hours\nGoing at the fastest speed it will take ${timeForTripFast} hours`);
